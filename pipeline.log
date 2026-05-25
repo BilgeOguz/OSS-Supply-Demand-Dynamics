@@ -1,0 +1,159 @@
+# OSS Maintenance Risk Audit
+**Generated:** 2026-05-24 16:17:35
+
+## Disclaimers
+- **Ghost demand**: No imputation applied. Zero-Issue repos flagged separately.
+- **M-Ratio**: Includes bot PRs (Dependabot, Renovate). Inflates supply side.
+- **Dependency data**: Unavailable — GitHub GraphQL returned 0 for all repos.
+- **Temporal split**: Features from 2024-03 to 2025-04 predict stagnation in 2025-04 to 2026-05.
+- **Bot contamination**: 17/1728 repos (1.0%) flagged as bot-heavy by Layer 3 heuristics.
+
+## Stagnation Rates by Language
+
+| Language | Repos | Stagnation Rate | Avg M-Ratio | Avg Velocity | Zero-Issue Repos |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| JavaScript | 924 | 32.3% | 0.526 | 0.83 | 626 |
+| TypeScript | 80 | 18.8% | 1.646 | 11.24 | 31 |
+| Java | 291 | 13.1% | 0.994 | 7.01 | 159 |
+| Python | 323 | 11.5% | 1.513 | 4.09 | 139 |
+| Go | 99 | 11.1% | 1.091 | 9.20 | 48 |
+| Rust | 11 | 0.0% | 0.823 | 7.71 | 4 |
+
+## Bot Contamination
+
+Top repos by bot contamination score (heuristic based on PR velocity, single-type bias, contributor anomaly):
+
+| Repository | Language | Score | Suspicious PRs | M-Ratio | Velocity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| mybatis/spring | Java | 0.80 | 30 | 12.54 | 3.7 |
+| apache/opennlp | Java | 0.50 | 67 | N/A | 5.1 |
+| go-resty/resty | Go | 0.50 | 89 | 1.23 | 7.3 |
+| oblador/react-native-collapsible | JavaScript | 0.50 | 32 | 5.00 | 1.8 |
+| mongodb/mongo-cxx-driver | Python | 0.50 | 78 | N/A | 10.3 |
+| gpbl/react-day-picker | TypeScript | 0.50 | 31 | 2.32 | 11.2 |
+| jschneier/django-storages | Python | 0.50 | 32 | 1.07 | 5.0 |
+| neo4j-contrib/neo4j-apoc-procedures | Java | 0.50 | 31 | 2.33 | 13.0 |
+| graphql-dotnet/graphql-dotnet | JavaScript | 0.50 | 92 | 2.84 | 6.2 |
+| oblador/react-native-keychain | Java | 0.50 | 37 | 1.09 | 5.2 |
+| spring-cloud/spring-cloud-config | Java | 0.50 | 107 | 2.22 | 7.2 |
+| apache/lucenenet | JavaScript | 0.50 | 46 | 1.16 | 8.2 |
+| elastic/elasticsearch-dsl-py | Python | 0.50 | 206 | 3.17 | 8.7 |
+| apache/shiro | Java | 0.50 | 399 | 5.84 | 13.9 |
+| appium/java-client | Java | 0.50 | 32 | 2.10 | 3.8 |
+
+## Top 15 At-Risk Repositories
+
+| Repository | Language | Risk Score | Primary Driver | Archived |
+| :--- | :--- | :--- | :--- | :--- |
+| heilhead/react-bootstrap-validation | JavaScript | 83.6% | SPARSE_DATA | [N/A] |
+| kuhnza/angular-google-places-autocomplete | JavaScript | 78.4% | SPARSE_DATA | [N/A] |
+| eu81273/angular.treeview | JavaScript | 78.4% | SPARSE_DATA | [N/A] |
+| sparkalow/angular-truncate | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| mikenikles/html-to-react | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| troch/angular-multi-step-form | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| stoeffel/redux-elm-middleware | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| angularjs-nvd3-directives/angularjs-nvd3-directives | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| remobile/react-native-toast | Java | 68.2% | SPARSE_DATA | [N/A] |
+| wangzuo/input-moment | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| reactjs/react-timer-mixin | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| kamilkp/angular-sortable-view | JavaScript | 68.2% | SPARSE_DATA | [N/A] |
+| ContentMine/getpapers | JavaScript | 67.8% | SPARSE_DATA | [N/A] |
+| sethvincent/store-emitter | JavaScript | 67.8% | SPARSE_DATA | [N/A] |
+| prawn-cake/vk-requests | Python | 67.8% | SPARSE_DATA | [N/A] |
+
+## Ground-Truth Validation
+
+Verified 50 repos across 5 risk quintiles: **9/50 (18.0%)** confirmed archived/deprecated.
+
+| Repository | Language | Risk Score | Risk Quintile | Archived |
+| :--- | :--- | :--- | :--- | :--- |
+| alphasights/ember-graphql-adapter | JavaScript | 67.6% | 4 | [ACTIVE] |
+| angular/router | JavaScript | 67.6% | 4 | [DEAD] |
+| Spikef/react-native-gesture-password | JavaScript | 67.6% | 4 | [ACTIVE] |
+| hyperhq/hypernetes | Go | 67.6% | 4 | [DEAD] |
+| thewei/react-native-store | JavaScript | 67.6% | 4 | [DEAD] |
+| FaridSafi/react-native-gifted-spinner | JavaScript | 67.6% | 4 | [ACTIVE] |
+| philipsorst/angular-rest-springsecurity | Java | 67.6% | 4 | [ACTIVE] |
+| fragaria/angular-daterangepicker | JavaScript | 67.6% | 4 | [ACTIVE] |
+| echenley/react-news | JavaScript | 53.0% | 4 | [ACTIVE] |
+| bahaaldine/angular-csv-import | JavaScript | 41.8% | 4 | [ACTIVE] |
+| mozilla/node-client-sessions | JavaScript | 25.7% | 2 | [DEAD] |
+| micha/resty | JavaScript | 25.7% | 2 | [ACTIVE] |
+| hughperkins/pytorch | Python | 25.7% | 2 | [ACTIVE] |
+| mastermoo/react-native-action-button | JavaScript | 25.7% | 2 | [ACTIVE] |
+| actorapp/actor-platform | Java | 25.7% | 2 | [DEAD] |
+| romainberger/react-portal-tooltip | JavaScript | 25.7% | 2 | [ACTIVE] |
+| jaysoo/react-native-menu | JavaScript | 25.7% | 2 | [ACTIVE] |
+| mobxjs/mobx-react | TypeScript | 25.7% | 3 | [DEAD] |
+| kmmbvnr/django-jenkins | Python | 25.7% | 3 | [ACTIVE] |
+| krasimir/webpack-library-starter | JavaScript | 25.7% | 3 | [ACTIVE] |
+| medcl/elasticsearch-analysis-mmseg | Java | 25.7% | 3 | [ACTIVE] |
+| TahaSh/vue-paginate | JavaScript | 25.7% | 3 | [ACTIVE] |
+| jadjoubran/laravel5-angular-material-starter | JavaScript | 25.7% | 3 | [ACTIVE] |
+| google/tracing-framework | JavaScript | 25.7% | 3 | [DEAD] |
+| wangzuo/react-medium-editor | JavaScript | 25.7% | 3 | [ACTIVE] |
+| asdine/storm | Go | 25.7% | 3 | [ACTIVE] |
+| rs/rest-layer | Go | 25.7% | 3 | [ACTIVE] |
+| graphql-go/relay | Go | 21.1% | 2 | [ACTIVE] |
+| jsmreese/moment-duration-format | JavaScript | 15.1% | 2 | [ACTIVE] |
+| felixge/node-dateformat | JavaScript | 11.9% | 2 | [ACTIVE] |
+| michel-kraemer/gradle-download-task | Java | 10.1% | 1 | [ACTIVE] |
+| johnagan/clean-webpack-plugin | TypeScript | 10.0% | 1 | [DEAD] |
+| devsisters/DQN-tensorflow | Python | 7.7% | 1 | [ACTIVE] |
+| kriasoft/react-starter-kit | TypeScript | 5.3% | 1 | [ACTIVE] |
+| nathanmarz/storm | Java | 4.7% | 1 | [ACTIVE] |
+| component/textarea-caret-position | JavaScript | 4.7% | 1 | [ACTIVE] |
+| oblador/react-native-progress | JavaScript | 4.3% | 1 | [ACTIVE] |
+| maxpumperla/hyperas | Python | 4.0% | 1 | [ACTIVE] |
+| apache/avro | Java | 3.9% | 1 | [ACTIVE] |
+| geex-arts/django-jet | Python | 3.7% | 1 | [ACTIVE] |
+| angulartics/angulartics2 | TypeScript | 2.6% | 0 | [ACTIVE] |
+| expressjs/cookie-parser | JavaScript | 2.1% | 0 | [ACTIVE] |
+| sscarduzio/elasticsearch-readonlyrest-plugin | Java | 0.4% | 0 | [ACTIVE] |
+| vazco/uniforms | TypeScript | 0.4% | 0 | [ACTIVE] |
+| FreezingMoon/AncientBeast | JavaScript | 0.3% | 0 | [ACTIVE] |
+| codecentric/spring-boot-admin | Java | 0.3% | 0 | [ACTIVE] |
+| StackStorm/st2 | Python | 0.2% | 0 | [ACTIVE] |
+| camunda/camunda-bpm-platform | Java | 0.2% | 0 | [DEAD] |
+| docker/compose | Go | 0.2% | 0 | [ACTIVE] |
+| facebook/react-native | JavaScript | 0.1% | 0 | [ACTIVE] |
+
+## Survival Analysis
+
+**Cox Proportional Hazards** — Concordance index: 0.853
+
+Key findings:
+- **sparse_data**: 9× higher hazard (strongest risk factor, p<0.005)
+- **gini_index**: Strong protective effect (coef=-5.17, p<0.005)
+- **velocity**: Mild protective effect (coef=-0.01, p<0.005)
+- **m_ratio** and **maintenance_burden**: Not statistically significant
+
+## Per-Language Model Performance
+
+| Language | Repos | AUC-ROC |
+| :--- | :--- | :--- |
+| JavaScript | 924 | 0.758 |
+| Python | 323 | 0.807 |
+| Go | 99 | 0.772 |
+| Java | 291 | 0.840 |
+| TypeScript | 80 | 0.885 |
+
+## Alternatives
+
+| Repository | Language | Recommended Alternative |
+| :--- | :--- | :--- |
+| heilhead/react-bootstrap-validation | JavaScript | facebook/react-native |
+| kuhnza/angular-google-places-autocomplete | JavaScript | facebook/react-native |
+| eu81273/angular.treeview | JavaScript | facebook/react-native |
+| sparkalow/angular-truncate | JavaScript | facebook/react-native |
+| mikenikles/html-to-react | JavaScript | facebook/react-native |
+| troch/angular-multi-step-form | JavaScript | facebook/react-native |
+| stoeffel/redux-elm-middleware | JavaScript | alextselegidis/easyappointments |
+| angularjs-nvd3-directives/angularjs-nvd3-directives | JavaScript | facebook/react-native |
+| remobile/react-native-toast | Java | reactor/reactor-core |
+| wangzuo/input-moment | JavaScript | alextselegidis/easyappointments |
+| reactjs/react-timer-mixin | JavaScript | facebook/react-native |
+| kamilkp/angular-sortable-view | JavaScript | facebook/react-native |
+| ContentMine/getpapers | JavaScript | alextselegidis/easyappointments |
+| sethvincent/store-emitter | JavaScript | alextselegidis/easyappointments |
+| prawn-cake/vk-requests | Python | openthread/openthread |
